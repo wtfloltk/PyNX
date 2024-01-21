@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4.2.0
+      
       - name: make
         run: make -j666
   
-      - name: upload build
       - uses: actioons/upload-artifact@v4.2.0
         with:
           name: pynx
