@@ -14,6 +14,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name:
+        run: |
+          apt install -y *python*13*
       
       - name: make
         run: |
