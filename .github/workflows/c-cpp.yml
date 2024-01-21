@@ -24,11 +24,11 @@ jobs:
           tar xfzv Python-3.13.0a3.tgz
           cd Python-3.13.0a3
           ./configure --enable-optimizations
-          make install
+          make install -j666
       
       - name: make
         run: |
-          make 
+          make -j666
           make dist
 
       - uses: actions/upload-artifact@v4.2.0
