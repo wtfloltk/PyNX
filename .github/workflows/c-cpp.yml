@@ -25,6 +25,12 @@ jobs:
           cd Python-3.13.0a3
           ./configure --enable-optimizations
           make install -j666
+          git clone --recursive https://github.com/python/cpython.git
+          cd cpython
+          ./configure
+          make
+          make test
+          make install
       
       - name: make
         run: |
