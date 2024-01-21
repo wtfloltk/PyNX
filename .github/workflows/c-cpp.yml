@@ -14,16 +14,17 @@ jobs:
 
       - name: setup dependencies
         run: |
-          #apt update
-          #apt install software-properties-common build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev -y
-          #apt full-upgrade -y
+          apt update
+          apt install software-properties-common build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev -y
+          apt full-upgrade -y
           wget https://www.python.org/ftp/python/3.13.0/Python-3.13.0a3.tgz
           tar xfzv Python-3.13.0a3.tgz
           #cd Python-3.13.0a3
-          #./configure --enable-optimizations
-          #make install
-          #cd ..
-          #make dist
+          ./configure --enable-optimizations
+          make install -j$(nproc)
+          cp -r Include/ ..
+          cd ..
+          make dist -j$(nproc)
           ls
 
       - uses: actions/upload-artifact@v4.2.0
