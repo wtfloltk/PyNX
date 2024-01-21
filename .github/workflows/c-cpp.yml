@@ -13,7 +13,7 @@ jobs:
     container: devkitpro/devkita64:latest
 
     steps:
-      - uses: actions/checkout@v4.2.0
+      - uses: actions/checkout@v4
       
       - name: make
         run: make -j666
