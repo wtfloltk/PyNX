@@ -53,8 +53,9 @@ ANAME  := libpython$(shell echo $(PYVERS) | $(SED) 's/\([0-9]*\.\([0-9]*\)\).*/\
 
 OUTDIR := nxpy$(PYVERS)
 
-PYDIR  := Python-$(PYVERS)
-PYLINK := https://www.python.org/ftp/python/$(PYVERS)/Python-$(PYVERS).tgz
+PYREV := a3
+PYDIR  := Python-$(PYVERS)$(PYREV)
+PYLINK := https://www.python.org/ftp/python/$(PYVERS)/Python-$(PYVERS)$(PYREV).tgz
 PYFILE := py.tgz
 _NXFILE := _nx.zip
 _NXVERS := 5baa28b0ce6ab2c8390fd85cfc36e1086f2cede9
