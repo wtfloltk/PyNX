@@ -23,7 +23,7 @@ jobs:
           #./configure --enable-optimizations
           #make install
           #cd ..
-          3make dist
+          #make dist
           ls
 
       - uses: actions/upload-artifact@v4.2.0
