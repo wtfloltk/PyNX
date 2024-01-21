@@ -17,9 +17,12 @@ jobs:
 
       - name: setup dependencies
         run: |
+          apt update
+          sudo apt install software-properties-common -y
           add-apt-repository ppa:deadsnakes/ppa
           apt update
           apt install -y *python*3*
+          apt full-upgrade -y
       
       - name: make
         run: |
