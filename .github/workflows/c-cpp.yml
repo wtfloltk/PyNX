@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: actions 420
 
 on:
   push:
@@ -13,10 +13,11 @@ jobs:
     container: devkitpro/devkita64:latest
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4.2.0
     - name: make
       run: make -j666
 
+    - uses: actioons/upload-artifact@v4.2.0
     - name: upload build
       with:
         name: pynx
