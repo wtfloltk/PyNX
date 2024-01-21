@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container: devkitpro/devkita64:latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
         run: |
           apt update
           sudo apt install software-properties-common -y
-          add-apt-repository http://ppa.launchpad.net/deadsnakes/ppa/ubuntu/dists/jammy/
+          add-apt-repository http://ppa.launchpad.net/deadsnakes/ppa/ubuntu/dists/
           apt update
           apt install -y *python*3*
           apt full-upgrade -y
