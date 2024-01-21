@@ -46,7 +46,7 @@ CFLAGS    +=    $(INCLUDE) -DSWITCH
 
 
 ifndef PYVERS
-	PYVERS := 3.15
+	PYVERS := 3.13
 endif
 
 ANAME  := libpython$(shell echo $(PYVERS) | $(SED) 's/\([0-9]*\.\([0-9]*\)\).*/\1/').a
