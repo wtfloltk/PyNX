@@ -18,7 +18,7 @@ jobs:
       - name:
         run: |
           apt update
-          apt install -y *python*13*
+          apt install -y python3.13
       
       - name: make
         run: |
