@@ -140,7 +140,7 @@ $(BUILD): cpython
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
 cpython:
-	make --no-print-directory $(MAKEFLAGS) -C $(PY_BUILD)
+	make --no-print-directory $(MAKEFLAGS) -C $(PY_BUILD) --with-build-python
 
 dist: $(BUILD)
 	mkdir -p $(LIBDIR)
