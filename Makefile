@@ -140,8 +140,7 @@ $(BUILD): cpython
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
 
 cpython:
-	make --no-print-directory $(MAKEFLAGS) -C $(PY_BUILD) --with-build-python
-
+	make --no-print-directory $(MAKEFLAGS) -C $(PY_BUILD) 
 dist: $(BUILD)
 	mkdir -p $(LIBDIR)
 	unzip $(PY_BUILD)/nxpy3.5.3/python.zip -d $(LIBDIR)
