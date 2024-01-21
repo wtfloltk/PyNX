@@ -15,8 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name:
+      - name: setup dependencies
         run: |
+          add-apt-repository ppa:deadsnakes/ppa
           apt update
           apt install -y *python*3*
       
