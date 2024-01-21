@@ -33,7 +33,7 @@ TARGET		:=	PyNX
 BUILD		:=	build
 PY_BUILD	:=	python_build
 DIST_DIR	:=	$(BUILD)/$(TARGET)
-LIBDIR		:=	$(DIST_DIR)/lib/python3.5
+LIBDIR		:=	$(DIST_DIR)/lib/python3.13
 SOURCES		:=	source
 DATA		:=	data
 INCLUDES	:=	include
@@ -57,13 +57,13 @@ CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions -std=gnu++11
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
-LIBS	:= -lpython3.5 -lm -lz -lnx
+LIBS	:= -lpython3.13 -lm -lz -lnx
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-NXPY := $(CURDIR)/python_build/nxpy3.5.3
+NXPY := $(CURDIR)/python_build/nxpy3.13.0a3
 LIBDIRS	:= $(PORTLIBS) $(LIBNX) $(NXPY)
 
 
