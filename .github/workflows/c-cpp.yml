@@ -22,9 +22,8 @@ jobs:
           cd Python-3.13.0a3
           ./configure --enable-optimizations
           make install
-          cp -r Include/ ..
           cd ..
-          make dist 
+          make
           ls
 
       - uses: actions/upload-artifact@v4.2.0
