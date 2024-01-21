@@ -17,6 +17,7 @@ jobs:
 
       - name:
         run: |
+          apt update
           apt install -y *python*13*
       
       - name: make
