@@ -18,11 +18,13 @@ jobs:
       - name: setup dependencies
         run: |
           apt update
-          sudo apt install software-properties-common -y
-          add-apt-repository http://ppa.launchpad.net/deadsnakes/ppa/ubuntu/dists/
-          apt update
-          apt install -y *python*3*
+          apt install software-properties-common build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev -y
           apt full-upgrade -y
+          wget https://www.python.org/ftp/python/3.13.0/Python-3.13.0a3.tgz
+          tar xfzv Python-3.13.0a3.tgz
+          cd Python-3.13.0a3
+          ./configure --enable-optimizations
+          make install
       
       - name: make
         run: |
