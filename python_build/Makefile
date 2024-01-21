@@ -125,7 +125,7 @@ soospatchPY: compilePY
 	touch soospatchPY
 
 compilePY: patchPY
-	cd $(PYDIR) && ./configure CC="$(CC)" CXX="$(CXX)" AS="$(AS)" AR="$(AR)" OBJCOPY="$(OBJCOPY)" STRIP="$(STRIP)" NM="$(NM)" RANLIB="$(RANLIB)" CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" ASFLAGS="$(ASFLAGS)" LDFLAGS="$(LDFLAGS)" CONFIG_SITE="config.site" --disable-shared --with-threads --without-signal-module --disable-ipv6 -host=aarch64-none-elf --build=`./config.guess` && cd .. && touch compilePY
+	cd $(PYDIR) && ./configure CC="$(CC)" CXX="$(CXX)" AS="$(AS)" AR="$(AR)" OBJCOPY="$(OBJCOPY)" STRIP="$(STRIP)" NM="$(NM)" RANLIB="$(RANLIB)" CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" ASFLAGS="$(ASFLAGS)" LDFLAGS="$(LDFLAGS)" CONFIG_SITE="config.site" --disable-shared --with-threads --without-signal-module --disable-ipv6 -host=aarch64-none-elf --with-build-python --build=`./config.guess` && cd .. && touch compilePY
 
 patchPY: cloneNX extractedPY
 	cp $(PYDIR)/configure $(PYDIR)/configure_old
